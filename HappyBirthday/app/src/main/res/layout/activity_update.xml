@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rootView2"
-    tools:context=".plusTransactionActivity">
-
+    android:id="@+id/rootView"
+    tools:context=".updateActivity">
 
     <LinearLayout
-    android:paddingTop="100dp"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="100dp">
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
+
             android:hint="Name of Expense"
             app:errorEnabled="true"
 
@@ -66,25 +67,28 @@
 
 
     <Button
-        android:id="@+id/submitTransactionButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/updateBtn"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="183dp"
-        android:layout_weight="0.5"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="84dp"
         android:background="@color/teal_700"
         android:padding="15dp"
-        android:text="Submit"
+        android:text="Update"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+A
+
     <Button
         android:id="@+id/addReceiptButton"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
@@ -95,11 +99,29 @@
         android:background="@color/teal_700"
         android:drawableStart="@drawable/ic_camera"
         android:padding="15dp"
+
         android:text="Add Receipt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/submitTransactionButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/receiptSign"
+        android:layout_width="wrap_content"
+
+        android:layout_height="24dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="200dp"
+        android:drawableStart="@drawable/ic_baseline_check_24"
+        android:drawablePadding="5dp"
+        android:text="Receipt added"
+        app:layout_constraintBottom_toTopOf="@+id/updateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addReceiptButton"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

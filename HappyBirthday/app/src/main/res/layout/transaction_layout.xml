@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:maxHeight="45dp"
+    android:maxHeight="100dp"
     android:clickable="true"
     android:background="?selectableItemBackground"
     >
@@ -13,14 +13,20 @@
         android:layout_height="wrap_content"
         android:text="test1"
         android:textSize="20dp"
+        android:backgroundTint="@color/background"
         android:layout_marginStart="6dp"
         android:layout_weight="1"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         />
     <TextView
         android:id="@+id/amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:layout_marginEnd="12dp"
+        android:textColor="@color/red"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:text="€ 100"/>
 </LinearLayout>
