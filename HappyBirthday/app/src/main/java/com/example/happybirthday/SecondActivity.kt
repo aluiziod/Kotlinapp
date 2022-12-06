@@ -19,11 +19,13 @@ import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import androidx.appcompat.widget.SearchView
 
 
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var allTransaction: List<Transaction>
+    private lateinit var tempList: List<Transaction>
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var database:AppDatabase
@@ -79,6 +81,7 @@ class SecondActivity : AppCompatActivity() {
                }
 
 
+
     private fun fetchAll(){
     GlobalScope.launch {
 
@@ -104,7 +107,21 @@ class SecondActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.delete_menu,menu)
+        menuInflater.inflate(R.menu.menu_main,menu)
+        var menuItem = menu?.findItem(R.id.menu_search)
+        var searchView: SearchView = menuItem?.actionView as SearchView
+        searchView.maxWidth = Int.MAX_VALUE
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
         return true
     }
 
@@ -176,8 +193,6 @@ class SecondActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
 
 }

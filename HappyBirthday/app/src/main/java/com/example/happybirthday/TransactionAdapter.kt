@@ -9,11 +9,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-
+import android.widget.Filter
+import android.widget.Filterable
 
 
 class TransactionAdapter(private var transactions: List<Transaction>):
-    RecyclerView.Adapter<TransactionAdapter.TransactionHolder>() {
+    RecyclerView.Adapter<TransactionAdapter.TransactionHolder>(), Filterable {
 
     class  TransactionHolder(view:View) : RecyclerView.ViewHolder(view){
         val label : TextView = view.findViewById(R.id.label)
@@ -46,6 +47,20 @@ class TransactionAdapter(private var transactions: List<Transaction>):
     fun updater(transactions: List<Transaction>){
         this.transactions = transactions
         notifyDataSetChanged()
+    }
+
+    override fun getFilter(): Filter {
+        var fiter = object : Filter() {
+            override fun performFiltering(p0: CharSequence?): FilterResults {
+                TODO("Not yet implemented")
+            }
+
+            override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        return filter;
     }
 
 
